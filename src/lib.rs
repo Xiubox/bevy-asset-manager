@@ -189,7 +189,7 @@ where
     pub fn insert_many(&self, pairs: &[(Key, &str)]) {
         let mut lock = self.assets.write().unwrap();
 
-        pairs.into_iter().for_each(|(key, path)| {
+        pairs.iter().for_each(|(key, path)| {
             lock.insert(*key, AssetHandle::Lazy(path.to_owned().to_owned()));
         });
     }
@@ -206,7 +206,7 @@ where
     pub fn insert_many_loaded(&self, pairs: &[(Key, &str)]) {
         let mut lock = self.assets.write().unwrap();
 
-        pairs.into_iter().for_each(|(key, path)| {
+        pairs.iter().for_each(|(key, path)| {
             lock.insert(
                 *key,
                 AssetHandle::Loaded(self.asset_server.load(path.to_owned().to_owned())),
@@ -230,7 +230,7 @@ where
     pub fn load_many(&self, keys: &[Key]) {
         let mut lock = self.assets.write().unwrap();
 
-        keys.into_iter().for_each(|key| {
+        keys.iter().for_each(|key| {
             if let Some(asset) = lock.get_mut(key) {
                 match asset {
                     AssetHandle::Lazy(path) => {
@@ -274,6 +274,6 @@ where
             })
         };
 
-        keys.into_iter().filter_map(get_asset).collect()
+        keys.iter().filter_map(get_asset).collect()
     }
 }
