@@ -2,7 +2,7 @@
 
 This crate provides a simple asset management system for the Bevy game engine.
 It defines an `AssetManager` which handles loading and retriving assets based on enum key variants,
-with support for lazyiily and eagerly loading game assets. Macros are
+with support for lazyily and eagerly loading game assets. Macros are
 provided for easy creation of asset managers.
 
 ## Example
