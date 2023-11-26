@@ -2,6 +2,15 @@
 name = "bevy_asset_manager"
 version = "0.1.0"
 edition = "2021"
+authors = ["Justin Cremer <git@xiuxiu62>"]
+license = "MIT"
+description = "Simple asset loading and organization in bevy"
+repository = "https://github.com/xiuxiu62/bevy_asset_manager"
+homepage = "https://github.com/xiuxiu62/bevy_asset_manager"
+documentation = "https://docs.rs/bevy_asset_manager"
+keywords = ["bevy", "assets", "gamedev"]
+categories = ["bevy", "game-development"]
+readme = "README.md"
 
 [dependencies]
 bevy = { version = "0.12.0", default-features = false, features = ["bevy_asset"] }
