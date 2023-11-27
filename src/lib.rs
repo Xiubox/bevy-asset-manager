@@ -115,7 +115,7 @@ use std::{hash::Hash, sync::RwLock};
 /// // Create a lazy asset manager with unloaded assets
 /// let lazy_manager = lazy_asset_manager!(<Audio, Texture> binds asset_server.clone(), {
 ///     Audio::EnginOn => "sound/engine-on.ogg",
-///     Audio::EnginOff => "sound/engine-off.ogg",
+///     Audio::EngineOff => "sound/engine-off.ogg",
 ///     Audio::EngineStall => "sound/engine-stall.ogg",
 /// });
 /// ```
