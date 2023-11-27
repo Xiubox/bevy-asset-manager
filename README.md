@@ -57,7 +57,7 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
 }
 
 // Retrieve and use our engine on audio asset
-fn accelerate(hannel: Res<AudioChannel<Ship>>, audio_manager: Res<ShipAudioManager>) {
+fn accelerate(channel: Res<AudioChannel<Ship>>, audio_manager: Res<ShipAudioManager>) {
     audio.stop();
     audio
         .play(audio_manager.get(ShipAudio::EngineOn).unwrap())
@@ -66,7 +66,7 @@ fn accelerate(hannel: Res<AudioChannel<Ship>>, audio_manager: Res<ShipAudioManag
 }
 
 // Retrieve and use our engine off audio asset
-fn idle(hannel: Res<AudioChannel<Ship>>, audio_manager: Res<ShipAudioManager>) {
+fn idle(channel: Res<AudioChannel<Ship>>, audio_manager: Res<ShipAudioManager>) {
     audio.stop();
     audio
         .play(audio_manager.get(ShipAudio::EngineOff).unwrap())
